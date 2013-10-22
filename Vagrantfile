@@ -9,6 +9,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "precise32"
 
+  # Hostname
+  config.vm.host_name = 'vagrant_rails_box'
+
 
   # The url from where the 'config.vm.box' box will be fetched 
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
@@ -19,7 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 
   # using a specific IP.
-  # config.vm.network :private_network, ip: "10.4.4.57"
+  config.vm.network :private_network, ip: "10.4.4.57"
 
 
   # If true, then any SSH connections made will enable agent forwarding.
@@ -29,17 +32,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder.
-  # config.vm.synced_folder '------YourSharedFolderDirectory-----', '/home/vagrant/code', :nfs=> false
+  config.vm.synced_folder '/Users/programadorjedi/Copy/Ivan/Sites/Quimbik', '/home/vagrant/code', :nfs=> false
 
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
-  # config.vm.provider :virtualbox do |v|
-  #   v.customize ["modifyvm", :id, "--memory", "4000"]
-  #   v.customize ["modifyvm", :id, "--cpuexecutioncap", "95"]
-  #   v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-  #   v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
-  # end
+  config.vm.provider :virtualbox do |v|
+    v.customize ["modifyvm", :id, "--memory", "4000"]
+    v.customize ["modifyvm", :id, "--cpuexecutioncap", "95"]
+    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+  end
 
 
   #Provision

@@ -31,7 +31,9 @@ class { 'install_mysql': }
 
 class install_postgres {
 
-  class { 'postgresql::server': }
+  class { 'postgresql::server': 
+    postgres_password => 'postgres'
+  }
 
   postgresql::server::db { 'database_example':
     user     => 'rails',
@@ -39,6 +41,10 @@ class install_postgres {
   }
 }
 class { 'install_postgres': }
+
+package { 'libpq-dev':
+  ensure => installed,
+}
 
 
 # --- SQLite -------------------------------------------------------------------
@@ -98,7 +104,6 @@ class { 'install-rvm': }
 package { 'libreadline-dev':
   ensure => installed
 }
-
 
 # ExecJS runtime.
 package { 'nodejs':

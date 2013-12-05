@@ -22,6 +22,10 @@ class { 'apt_get_update':
 
 class install_mysql {
   include '::mysql::server'
+
+  package { 'libmysqlclient15-dev':
+    ensure => installed
+  }
 }
 class { 'install_mysql': }
 
@@ -39,12 +43,14 @@ class install_postgres {
     user     => 'rails',
     password => postgresql_password('rails', 'rails'),
   }
+
+  package { 'libpq-dev':
+    ensure => installed,
+  }
 }
 class { 'install_postgres': }
 
-package { 'libpq-dev':
-  ensure => installed,
-}
+
 
 
 # --- SQLite -------------------------------------------------------------------
@@ -77,18 +83,6 @@ class install-rvm {
     'ruby-1.9.3-p194':
       ensure => 'present',
       default_use => true;
-    'ree-1.8.7-2012.02':
-      ensure => 'present',
-      default_use => false;
-    'ruby-2.0.0-p247':
-      ensure => 'present',
-      default_use => false;
-  }
-
-  rvm_gem {
-    'ruby-1.9.3-p194/bundler': ensure => latest;
-    'ruby-1.9.3-p194/rails': ensure => latest;
-    'ruby-1.9.3-p194/rake': ensure => latest;
   }
 
 }

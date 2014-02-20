@@ -27,7 +27,7 @@ If the base box is not present that command fetches it first.
     ...
     vagrant@vagrantrailsbox:~$
 
-Port 3000 in the host computer is forwarded to port 3000 in the virtual machine. Thus, applications running in the virtual machine can be accessed via localhost:3000 in the host computer.
+Port 3000 in the host computer is forwarded to port 3000 in the virtual machine. This, applications running in the virtual machine can be accessed via localhost:3000 in the host computer.
 
 ## What's In The Box
 

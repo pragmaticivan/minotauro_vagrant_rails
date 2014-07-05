@@ -1,0 +1,78 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    example42/puppi (2.1.9)
+    maestrodev/wget (1.4.4)
+    puppetlabs/gcc (0.2.0)
+    puppetlabs/stdlib (4.2.2)
+
+GIT
+  remote: git://github.com/elasticsearch/puppet-elasticsearch.git
+  ref: master
+  sha: 6d08442e8382f0f47388d4185122992c2d73cd9b
+  specs:
+    elasticsearch/elasticsearch (0.4.0)
+      puppetlabs/stdlib (>= 3.2.0)
+
+GIT
+  remote: git://github.com/example42/puppet-mysql.git
+  ref: master
+  sha: a894aef960b2a56dc4b68418d62d24ac22d5161a
+  specs:
+    example42/mysql (2.1.3)
+      example42/puppi (>= 2.0.0)
+      puppetlabs/stdlib (>= 2.0.0)
+
+GIT
+  remote: git://github.com/example42/puppet-postgresql.git
+  ref: master
+  sha: 56239f4588c5e997d7f5b54844444ee40cc5e5a6
+  specs:
+    example42/postgresql (2.0.11)
+      example42/puppi (>= 2.0.0)
+      puppetlabs/concat (>= 1.0.0)
+      puppetlabs/stdlib (>= 4.1.0)
+
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-apt.git
+  ref: master
+  sha: 841ed61ba282b8673175cbb0ddd46c81f1ee823f
+  specs:
+    puppetlabs/apt (1.5.0)
+      puppetlabs/stdlib (>= 2.2.1)
+
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-concat.git
+  ref: master
+  sha: a6fc85aa673f0fba791614036ded346d89c2cf32
+  specs:
+    puppetlabs/concat (1.1.0)
+      puppetlabs/stdlib (>= 4.2.0)
+
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-mongodb.git
+  ref: master
+  sha: 25fd691bf7350033af0314fd00019b6842854c95
+  specs:
+    puppetlabs/mongodb (0.8.0)
+      puppetlabs/apt (>= 1.0.0)
+      puppetlabs/stdlib (>= 2.2.0)
+
+GIT
+  remote: git://github.com/thomasvandoren/puppet-redis.git
+  ref: master
+  sha: 915d85a50588c73e6ebc083915d473090580169b
+  specs:
+    thomasvandoren/redis (0.0.9)
+      maestrodev/wget (>= 1.1.0)
+      puppetlabs/gcc (>= 0.0.3)
+
+DEPENDENCIES
+  elasticsearch/elasticsearch (>= 0)
+  example42/mysql (>= 0)
+  example42/postgresql (>= 0)
+  puppetlabs/apt (>= 0)
+  puppetlabs/concat (>= 0)
+  puppetlabs/mongodb (>= 0)
+  thomasvandoren/redis (>= 0)
+

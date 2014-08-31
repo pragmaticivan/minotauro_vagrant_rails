@@ -40,6 +40,8 @@
     - fail2ban
     - ufw
     - unattended-upgrades
+    - libmagickwand4
+    - libmagickwand-dev
 
 
 # Rails depends on a JS runtime.

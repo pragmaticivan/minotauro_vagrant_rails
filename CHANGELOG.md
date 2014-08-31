@@ -1,6 +1,10 @@
 <!--
 Marked Style: GitHub
 -->
+# v0.2.2
+
+- Add vagrant to rvm group
+
 # v0.2.1
 
 - Fix RVM sudo_user

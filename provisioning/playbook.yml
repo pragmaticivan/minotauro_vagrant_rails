@@ -12,3 +12,4 @@
     - { role: mongodb, tags: ['mongodb'] }
     - { role: ruby, tags: ['ruby'] }
     - { role: redis, tags: ['redis'] }
+    - { role: elasticsearch, tags: ['elasticsearch'] }

@@ -1,0 +1,4 @@
+---
+- name: "Restart Elasticsearch"
+  sudo: yes
+  service: name={{ elasticsearch.deb.service }} state=restarted

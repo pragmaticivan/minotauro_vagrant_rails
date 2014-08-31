@@ -1,0 +1,9 @@
+---
+- name: Configure minotauro box
+  hosts: all
+  sudo: true
+  vars_files:
+    - vars/main.yml
+  roles:
+    ### Server provisioning roles:
+    - { role: linux-prereqs, tags: ['linux-prereqs'] }

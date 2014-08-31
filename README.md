@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project automates the setup of a development environment for general Ruby on Rails application development. 
+This project automates the setup of a development environment for general Ruby on Rails application development.
 
 ## Requirements
 
@@ -10,7 +10,7 @@ This project automates the setup of a development environment for general Ruby o
 
 * [Vagrant](http://vagrantup.com)
 
-* [Librarian Puppet](http://librarian-puppet.com/)
+* [Ansible](http://www.ansible.com/home)
 
 
 
@@ -23,7 +23,7 @@ Building the virtual machine is this easy:
     host $ librarian-puppet install
     host $ vagrant up
 
-If the base box is not present that command fetches it first. 
+If the base box is not present that command fetches it first.
 
     host $ vagrant ssh
     Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic-pae i686)

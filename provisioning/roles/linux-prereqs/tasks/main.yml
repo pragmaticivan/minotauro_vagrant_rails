@@ -1,0 +1,56 @@
+- name: Update apt cache
+  apt: update_cache=yes cache_valid_time=3600
+  sudo: yes
+
+- name: Upgrade existing linux packages
+  apt: upgrade=dist
+  sudo: yes
+
+- name: Install the kitchen sink
+  action: apt pkg={{item}} state=installed update_cache=true
+  sudo: yes
+  with_items:
+    - autoconf
+    - automake
+    - bison
+    - build-essential
+    - curl
+    - gawk
+    - git-core
+    - git
+    - libxml2-dev
+    - libffi-dev
+    - libyaml-dev
+    - libssl-dev
+    - libsqlite3-dev
+    - libgdbm-dev
+    - libncurses5-dev
+    - libreadline6-dev
+    - libtool
+    - libyaml-dev
+    - nfs-common # make virtualbox faster
+    - pkg-config
+    - sqlite3
+    - vim
+    - zlib1g-dev
+    - htop
+    - iftop
+    - python-pycurl # for postgresql playbook, uses apt_pkg
+    - python-software-properties # for `add-apt-repository` command
+    - fail2ban
+    - ufw
+    - unattended-upgrades
+
+
+# Rails depends on a JS runtime.
+# Should move this to it's own role, eventually.
+
+- name: Node.js | Add the node.js PPA
+  action: command add-apt-repository -y ppa:chris-lea/node.js creates=/etc/apt/sources.list.d/chris-lea-node_js-precise.list
+  sudo: yes
+
+- name: Node.js | Install nodejs and npm
+  action: apt pkg={{ item }} state=installed update_cache=yes
+  sudo: yes
+  with_items:
+   - nodejs

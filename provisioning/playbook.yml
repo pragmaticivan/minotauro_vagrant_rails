@@ -11,3 +11,4 @@
     - { role: postgresql, tags: ['postgresql'] }
     - { role: mongodb, tags: ['mongodb'] }
     - { role: ruby, tags: ['ruby'] }
+    - { role: redis, tags: ['redis'] }

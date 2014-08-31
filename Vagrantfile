@@ -26,7 +26,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           ansible.limit = 'all'
           ansible.verbose = "vvv"
           ansible.sudo = "true"
-          # ansible.tags = 'linux-prereqs'
+          # ansible.tags = 'ruby'
       end
 
       machine.vm.provider "virtualbox" do |v|

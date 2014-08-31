@@ -28,7 +28,6 @@
 
 - name: Install Ruby on RVM
   shell: /usr/local/rvm/bin/rvm install {{rvm.ruby_version}}
-  sudo_user: vagrant
   tags:
     - packages
     - ruby

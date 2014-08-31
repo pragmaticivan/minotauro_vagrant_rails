@@ -1,5 +1,4 @@
 .vagrant
-.librarian
 VagrantBK
 .tmp/
 .ruby-gemset

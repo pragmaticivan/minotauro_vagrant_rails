@@ -1,0 +1,29 @@
+---
+# Install Elasticsearch dependencies
+- name: "Install Elasticsearch dependencies"
+  sudo: yes
+  action: apt pkg={{ item }} state=installed update-cache=yes
+  with_items: elasticsearch.deb.dependencies
+
+# Fetch Elasticsearch Debian package
+- name: "Fetch Elasticsearch"
+  sudo: yes
+  action: get_url url={{ elasticsearch.url }}/{{ elasticsearch.deb.package }} dest={{ elasticsearch.tmp }} thirsty=yes mode=0440
+  register: elasticsearch_deb
+
+# Install Elasticsearch
+- name: "Install Elasticsearch package"
+  sudo: yes
+  action: shell dpkg -i -E --force-confnew {{ elasticsearch.tmp }}/{{ elasticsearch.deb.package }} 2>&1 | grep skipping | wc -l
+  when: elasticsearch_deb.changed
+
+# # Change Elasticsearch bind IP
+# # - name: "Change Elasticsearch bind IP"
+# #   action: lineinfile dest={{ elasticsearch.config }} state=present regexp='^network.host' insertafter='\# network.host' line="network.host: {{ elasticsearch_ip }}"
+# #   notify:
+# #     - "Restart Elasticsearch"
+
+# Ensure Elasticsearch is running
+- name: "Ensure Elasticsearch is running"
+  sudo: yes
+  service: name={{ elasticsearch.deb.service }} state=started

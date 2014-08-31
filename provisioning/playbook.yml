@@ -1,0 +1,15 @@
+---
+- name: Configure minotauro box
+  hosts: all
+  sudo: true
+  vars_files:
+    - vars/main.yml
+  roles:
+    ### Server provisioning roles:
+    - { role: linux-prereqs, tags: ['linux-prereqs'] }
+    - { role: mysql, tags: ['mysql'] }
+    - { role: postgresql, tags: ['postgresql'] }
+    - { role: mongodb, tags: ['mongodb'] }
+    - { role: ruby, tags: ['ruby'] }
+    - { role: redis, tags: ['redis'] }
+    - { role: elasticsearch, tags: ['elasticsearch'] }

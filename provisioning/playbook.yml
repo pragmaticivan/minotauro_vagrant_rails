@@ -7,3 +7,4 @@
   roles:
     ### Server provisioning roles:
     - { role: linux-prereqs, tags: ['linux-prereqs'] }
+    - { role: mysql, tags: ['mysql'] }

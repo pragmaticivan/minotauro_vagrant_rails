@@ -1,0 +1,20 @@
+- name: MySQL | Make sure the MySql packages are installed
+  apt:
+    pkg: "{{item}}"
+    update_cache: yes
+  with_items: mysql_packages
+
+- name: MySQL | Ensure MySQL is running
+  service:
+    name: mysql
+    state: started
+
+- name: MySQL | Update the my.cnf
+  template:
+    src: etc_mysql_my.cnf.j2
+    dest: /etc/mysql/my.cnf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart mysql

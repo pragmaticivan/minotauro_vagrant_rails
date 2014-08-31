@@ -9,3 +9,4 @@
     - { role: linux-prereqs, tags: ['linux-prereqs'] }
     - { role: mysql, tags: ['mysql'] }
     - { role: postgresql, tags: ['postgresql'] }
+    - { role: ruby, tags: ['ruby'] }

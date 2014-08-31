@@ -39,6 +39,21 @@
     - ruby
     - rvmuse
 
+- name: Permission to vagrant
+  tags:
+    - deploy
+  file: >
+    dest=/usr/local/rvm
+    state=directory
+    recurse=yes
+    owner=vagrant
+    mode=770
+  tags:
+    - vagrant_rvm
+
+
+
+
 - name: Install bundle gem
   gem: >
     name=bundler

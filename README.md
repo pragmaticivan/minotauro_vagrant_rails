@@ -1,4 +1,12 @@
-# A Virtual Machine for Ruby on Rails Application Development
+![Imgur](http://i.imgur.com/kwW7v1C.png?1)
+
+
+# Minotauro Vagrant Rails
+
+
+```
+A Virtual Machine for Ruby on Rails Application Development
+```
 
 ## Introduction
 
@@ -18,9 +26,8 @@ This project automates the setup of a development environment for general Ruby o
 
 Building the virtual machine is this easy:
 
-    host $ git clone https://github.com/pragmaticivan/vagrant_rails.git
-    host $ cd vagrant_rails
-    host $ librarian-puppet install
+    host $ git clone https://github.com/pragmaticivan/minotauro_vagrant_rails.git
+    host $ cd minotauro_vagrant_rails
     host $ vagrant up
 
 If the base box is not present that command fetches it first.
@@ -28,7 +35,7 @@ If the base box is not present that command fetches it first.
     host $ vagrant ssh
     Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic-pae i686)
     ...
-    vagrant@vagrantrailsbox:~$
+    vagrant@minotaurorailsbox:~$
 
 Port 3000 in the host computer is forwarded to port 3000 in the virtual machine. This, applications running in the virtual machine can be accessed via localhost:3000 in the host computer.
 

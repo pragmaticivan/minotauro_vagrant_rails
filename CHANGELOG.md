@@ -1,6 +1,10 @@
 <!--
 Marked Style: GitHub
 -->
+
+# v1.0
+- Setup default master user for postgresql
+
 # v0.2.2
 
 - Add vagrant to rvm group

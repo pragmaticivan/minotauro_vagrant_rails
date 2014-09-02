@@ -12,3 +12,8 @@
 
 - include: users.yml
   tags: [postgresql, postgresql-users]
+
+- include: vagrant_user.yml
+  tags: [postgresql, postgresql-vagrant-user]
+
+

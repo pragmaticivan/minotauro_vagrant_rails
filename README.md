@@ -58,7 +58,7 @@ The recommended workflow is
 
 ## Database
 * For mysql the default user is root: `mysql -u root`
-* For postgresql the default user is postgres: `sudo -u postgres psql`
+* For postgresql the default user is `minotauro` and the password is `minotauro`
 
 
 

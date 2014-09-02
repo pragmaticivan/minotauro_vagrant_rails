@@ -1,0 +1,15 @@
+- name: create the default postgresql user
+  postgresql_user: name={{postgresql_default_master_user}} password={{postgresql_default_master_pass}} login_user=postgres role_attr_flags=CREATEDB,SUPERUSER
+  sudo_user: postgres
+  tags: postgresql
+
+- name: test for server instrumentation
+  command: psql -c 'select * from pg_extension;' -t -A
+  sudo_user: postgres
+  register: server_instrumentation
+  changed_when: False
+
+- name: install server instrumentation
+  command: psql -c 'CREATE EXTENSION adminpack;' -t -A
+  sudo_user: postgres
+  when: "'adminpack' not in server_instrumentation.stdout"

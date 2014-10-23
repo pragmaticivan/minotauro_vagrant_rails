@@ -1,6 +1,8 @@
 <!--
 Marked Style: GitHub
 -->
+# v1.0.1
+- Comment ansible.tags from Vagrantfile
 
 # v1.0
 - Setup default master user for postgresql

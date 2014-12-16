@@ -7,8 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.define 'minotauro' do |machine|
-      machine.vm.box = "precise64"
-      machine.vm.box_url = "http://files.vagrantup.com/precise64.box"
+      machine.vm.box = "ubuntu/trusty64"
       machine.vm.hostname = 'minotaurorailsbox'
       machine.vm.network "private_network", ip: "10.0.10.50"
       machine.vm.network "forwarded_port", guest: 3000, host: 3000
@@ -26,7 +25,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           ansible.limit = 'all'
           ansible.verbose = "vvv"
           ansible.sudo = "true"
-          # ansible.tags = 'postgresql'
       end
 
       machine.vm.provider "virtualbox" do |v|
@@ -38,4 +36,3 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
 end
-

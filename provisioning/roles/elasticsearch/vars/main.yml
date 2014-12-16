@@ -1,11 +1,11 @@
 elasticsearch:
-  url: 'http://download.elasticsearch.org/elasticsearch/elasticsearch'
+  url: 'https://download.elasticsearch.org/elasticsearch/elasticsearch'
   deb:
-    package: 'elasticsearch-0.90.10.deb'
+    package: 'elasticsearch-1.4.1.deb'
     service: 'elasticsearch'
     dependencies:
-      - 'openjdk-6-jre'
-      - 'openjdk-6-jdk'
+      - 'openjdk-7-jre'
+      - 'openjdk-7-jdk'
   plugin: '/usr/share/elasticsearch/bin/plugin'
   config: '/etc/elasticsearch/elasticsearch.yml'
 

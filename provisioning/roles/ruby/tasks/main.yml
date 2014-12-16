@@ -2,7 +2,6 @@
   apt: name={{item}} state=latest
   with_items:
     - ruby
-    - rubygems
   tags:
     - packages
     - ruby

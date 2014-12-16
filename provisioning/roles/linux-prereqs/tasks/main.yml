@@ -15,6 +15,7 @@
     - bison
     - build-essential
     - curl
+    - nmap
     - gawk
     - git-core
     - git
@@ -40,9 +41,18 @@
     - fail2ban
     - ufw
     - unattended-upgrades
-    - libmagickwand4
+    - imagemagick
     - libmagickwand-dev
 
+- name: Configure locale after installing dependencies
+  locale_gen: name={{item}} state=present
+  with_items:
+    - en_US.UTF-8
+    - pt_BR.UTF-8
+
+- name: Reconfigure locales
+  action: command dpkg-reconfigure locales
+  sudo: yes
 
 # Rails depends on a JS runtime.
 # Should move this to it's own role, eventually.

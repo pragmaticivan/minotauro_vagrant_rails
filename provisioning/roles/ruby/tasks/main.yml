@@ -2,10 +2,13 @@
   apt: name={{item}} state=latest
   with_items:
     - ruby
-    - rubygems
   tags:
     - packages
     - ruby
+
+- name: Add keys for RVM
+  shell: gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+  sudo: yes
 
 - name: Install RVM
   shell: curl -L get.rvm.io | bash -s stable

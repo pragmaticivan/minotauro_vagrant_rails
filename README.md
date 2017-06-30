@@ -56,6 +56,8 @@ The recommended workflow is
 
 * run within the virtual machine
 
+* If you're using rails with version 4+, you should specify the hostname to 0.0.0.0 (ex: `rails s -b 0.0.0.0`)
+
 ## Database
 * For mysql the default user is root: `mysql -u root`
 * For postgresql the default user is `minotauro` and the password is `minotauro`
